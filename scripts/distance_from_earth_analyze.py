@@ -1,21 +1,18 @@
 import seaborn as sns
-import matplotlib.pyplot as plt
 
 
 def analyze(f, ax, planets):
-
     # Load the example planets dataset
     # planets = sns.load_dataset("planets")
 
     # replace pl_pnum and st_mass with other column names
-    sns.boxplot(x="st_dist", y="pl_discmethod", data=planets)
+    sns.boxplot(ax=ax,x="st_dist", y="pl_discmethod", data=planets)
 
     # Add in points to show each observation
-    sns.swarmplot(x="st_dist", y="pl_discmethod", data=planets,
+    sns.swarmplot(ax=ax,x="st_dist", y="pl_discmethod", data=planets,
                   size=1, color=".3", linewidth=0)
     # Tweak the visual presentation
 
     ax.xaxis.grid(True)
     ax.set(ylabel="")
     sns.despine(trim=True, left=True)
-    plt.show()
