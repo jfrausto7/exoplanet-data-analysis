@@ -1,2 +1,2 @@
 # exoplanet-data-analysis
- Midsemester project for PHYS 0112
+ This is my mid-semester project for PHYS 0112! I essentially built a collection of scripts that scrape data and create visualizations for analysis on existing exoplanets.
