@@ -10,9 +10,9 @@ import stellar_mass_analyze as stmass
 import temp_analyze as temp
 
 
-planets = pd.read_csv("data/planets.csv", sep=',', comment='#')
-sns.set(style="ticks")
+planets = pd.read_csv("data/planet_data.csv", sep=',', comment='#')
 
+sns.set(style="ticks")
 f, ax = plt.subplots(nrows=2, ncols=3, figsize=(98,24))
 
 ax[0, 0].set_xscale("log")
@@ -41,4 +41,3 @@ stmass.analyze(f, ax[1, 1], planets)
 temp.analyze(f, ax[1, 2], planets)
 
 plt.show()
-

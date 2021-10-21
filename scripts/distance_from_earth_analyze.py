@@ -2,17 +2,15 @@ import seaborn as sns
 
 
 def analyze(f, ax, planets):
-    # Load the example planets dataset
-    # planets = sns.load_dataset("planets")
 
-    # replace pl_pnum and st_mass with other column names
+    # process data from st_dist and pl_discmethod as a boxplot
     sns.boxplot(ax=ax,x="st_dist", y="pl_discmethod", data=planets)
 
-    # Add in points to show each observation
+    # add in points (as a swarmplot) to show precise data through each observation
     sns.swarmplot(ax=ax,x="st_dist", y="pl_discmethod", data=planets,
                   size=1, color=".3", linewidth=0)
-    # Tweak the visual presentation
 
+    # tweak the visual presentation to fit all points and the figure itself
     ax.xaxis.grid(True)
-    ax.set(ylabel="")
+    ax.set(ylabel="", xlabel="Host Star Distance from Earth (pc)")
     sns.despine(trim=True, left=True)
